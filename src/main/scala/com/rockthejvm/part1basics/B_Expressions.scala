@@ -14,10 +14,29 @@ object B_Expressions {
   // 布尔运算表达式: !, ||, &&
   val nonEqualityTest = !equalityTest
 
+  // -------------------------------
+  // 其他運算子（Map, List, Cats 等）
+  // -------------------------------
+
+  // -> 建立 Tuple2 (key, value)，常用於建立 Map
+  val pair = "apple" -> 3
+  val fruitMap = Map("banana" -> 2, "apple" -> 3)
+
+  // :: 把元素加在 List 前面（右結合）
+  val list1: List[Int] = 1 :: 2 :: 3 :: Nil
+  val list2: List[Int] = 1 :: List(2, 3)
+
+  // :+ 把元素加在 List 後面
+  val list3: List[Int] = List(1, 2) :+ 3
+
+  // ++ 合併兩個 List
+  val a = List(1, 2)
+  val b = List(3, 4)
+  val merged = a ++ b
+
   // 在 Scala 中，一切都是表达式(expressions)
   // 指令（instructions）：“做某事”
   // 表达式（expressions）：“计算出一个值”
-
 
   // if 在 Scala 中也是一种表达式，可以返回一个值
   val aCondition = true

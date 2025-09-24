@@ -36,7 +36,7 @@ object A_ValuesAndTypes {
   val aString: String = "Scala"
   val unitValue: Unit = () // c# void
 
-  // 集合类型
+  // 常见的集合类型
   val listValue: List[Int] = List(1, 2, 3)
   val setValue: Set[String] = Set("Scala", "Java", "Python", "Scala") // 自動去重 = c# HashSet
   val mapValue: Map[String, Int] = Map("one" -> 1, "two" -> 2, "three" -> 3) // c# Dictionary

@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/scala-3-beginners.iml" filepath="$PROJECT_DIR$/.idea/modules/scala-3-beginners.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scala-3-beginners-build.iml" filepath="$PROJECT_DIR$/.idea/modules/scala-3-beginners-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scala-3-beginners/scala-3-beginners.main.iml" filepath="$PROJECT_DIR$/.idea/modules/scala-3-beginners/scala-3-beginners.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scala-3-beginners.scala-3-beginners-build.iml" filepath="$PROJECT_DIR$/.idea/modules/scala-3-beginners.scala-3-beginners-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scala-3-beginners/scala-3-beginners.test.iml" filepath="$PROJECT_DIR$/.idea/modules/scala-3-beginners/scala-3-beginners.test.iml" />
     </modules>
   </component>
 </project>

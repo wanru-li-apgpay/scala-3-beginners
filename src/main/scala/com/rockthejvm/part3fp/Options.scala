@@ -78,6 +78,7 @@ object Options {
       else None
   }
 
+
   // defensive style (in an imperative language e.g. Java)
   /*
     String host = config("host")
@@ -110,6 +111,16 @@ object Options {
     p <- config.get("port")
     conn <- Connection(h, p)
   } yield conn.connect()
+
+  /**
+   * Exercise:
+   * obtain a connection
+   * fetch the url
+   * print the resulting  HTML
+   */
+  val host1 = "localhost"
+  val port1= "8081"
+  val myUrl="rockthejvm.com"
 
   def main(args: Array[String]): Unit = {
     println(connStatus.getOrElse("Failed to establish connection"))

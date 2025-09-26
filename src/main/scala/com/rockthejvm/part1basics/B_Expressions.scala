@@ -1,7 +1,6 @@
 package com.rockthejvm.part1basics
 
 object B_Expressions {
-
   // 表达式是可以被计算并返回一个值的结构
   val meaningOfLife = 40 + 2
 
@@ -29,7 +28,7 @@ object B_Expressions {
   // :+ 把元素加在 List 後面
   val list3: List[Int] = List(1, 2) :+ 3
 
-  // ++ 合併兩個 List
+  // ++ 合併兩個 List, 不是c#裡的 += 1
   val a = List(1, 2)
   val b = List(3, 4)
   val merged = a ++ b
@@ -69,16 +68,16 @@ object B_Expressions {
   }
 
   // 3
-  val yetAnotherValue = println("Scala")
+  val yetAnotherValue = println("Hello, Scala 我是练习3")
   //  val yetAnotherValue2: Unit = println("Scala")
   //  val theUnit: Unit = () // Unit == 在其他语言里等同于 "void"
   //
   //  def yetAnotherValue3 = println("Scala")
 
   def main(args: Array[String]): Unit = {
-    println(someValue)
-    println(someOtherValue)
-    println(yetAnotherValue)
+    println("练习1: " + someValue)
+    println("练习2: " + someOtherValue)
+    println("练习3: " + yetAnotherValue)
     // println(yetAnotherValue3)
 
     //scala執行時,會先執行 object Expressions 中定義的所有頂層的 val

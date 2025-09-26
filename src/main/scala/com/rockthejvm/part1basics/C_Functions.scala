@@ -2,7 +2,6 @@ package com.rockthejvm.part1basics
 
 object C_Functions {
 
-  // 函数 = 可重用的代码块，可以传入参数并返回一个结果
   def aFunction(a: String, b: Int): String =
     a + " " + b // 这里是一行表达式，返回字符串
 
@@ -16,6 +15,8 @@ object C_Functions {
 
   // 在 Scala 里一般不推荐使用 for、while 等传统循环，
   // 而是推荐使用递归（recursion），尤其是尾递归（tail recursion）,等等会介绍
+
+  //字串重复n次
   def stringConcatenation(str: String, n: Int): String =
     if (n == 0) "" // 递归终止条件 1
     else if (n == 1) str // 递归终止条件 2

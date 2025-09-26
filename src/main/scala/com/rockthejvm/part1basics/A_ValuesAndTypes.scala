@@ -1,4 +1,5 @@
 package com.rockthejvm.part1basics
+
 import scala.util.{Try, Success, Failure}
 
 
@@ -8,7 +9,7 @@ object A_ValuesAndTypes {
   val meaningOfLife: Int = 42 // 等价于c#里的 const int meaningOfLife = 42;
 
   // 不允许重新赋值
-  // meaningOfLife = 45
+  //meaningOfLife = 45
 
   // 也可定义一个变数, 但在 Scala 的慣例中，建議盡可能使用 val 不建議使用var
   var variable: Int = 42
@@ -17,7 +18,7 @@ object A_ValuesAndTypes {
   // 类型可以省略，Scala 会自动推断
   val anInteger = 67 // : Int is optional
 
-  // 常见的数据类型:
+  //<editor-fold> 常见的数据类型:
   val aBoolean: Boolean = false
   val aChar: Char = 'a'
   val anInt: Int = 78 // 4 bytes
@@ -42,32 +43,26 @@ object A_ValuesAndTypes {
   val mapValue: Map[String, Int] = Map("one" -> 1, "two" -> 2, "three" -> 3) // c# Dictionary
   val arrayValue: Array[Int] = Array(4, 5, 6)
   val tupleValue: (Int, String, Boolean) = (42, "Answer", true)
+  //</editor-fold>
 
-
-  // scala 特有的
+  //<editor-fold> scala 特有的
 
   // Option[T] 代表「可能有值，也可能沒有值」
   //
   // 在 Scala 中：
   //   Some(x) → 有值
   //   None    → 沒有值
-  //
-  // 👉 所以 Option[String] 可以用來表示：
-  //   成功時 → 得到 Some("值")
-  //   失敗時 → 得到 None
-  val optionValue: Option[String] = Some("I am here")  // c# string? optionValue = "Scala";
+  val optionValue: Option[String] = Some("I am here") // c# string? optionValue = "Scala";
   val noName: Option[String] = None // string? noName = null;
   val nullValue: String = null // 這樣也是可以但不建議
-
-
+  
   def findUserName(id: Int): Option[String] =
     if (id == 1) Some("Alice")
     else None
 
-  val name1 = findUserName(1).getOrElse("Unknown")  // 輸出 "Alice"
-  val name2 = findUserName(2).getOrElse("Unknown")  // 輸出 "Unknown"
-
-
+  val name1 = findUserName(1).getOrElse("Unknown") // 輸出 "Alice"
+  val name2 = findUserName(2).getOrElse("Unknown") // 輸出 "Unknown"
+  
   // Either[A, B] 代表「要嘛是 A，要嘛是 B」
   //
   // 在 Scala 中：
@@ -75,8 +70,8 @@ object A_ValuesAndTypes {
   //   Right → 通常代表成功或正確結果 (B)
   //
   // 👉 所以 Either[String, Int] 可以用來表示：
-  //   成功時 → 得到 Int
   //   失敗時 → 得到 String（錯誤訊息）
+  //   成功時 → 得到 Int
   val eitherValue: Either[String, Int] = Right(42)
 
   def safeDivide(a: Int, b: Int): Either[String, Int] =
@@ -86,10 +81,10 @@ object A_ValuesAndTypes {
   val r1 = safeDivide(10, 2) // Right(5)
   val r2 = safeDivide(10, 0) // Left("除數不能是 0")
 
-  r1 match {
-    case Right(value) => println(s"結果: $value")
-    case Left(err) => println(s"錯誤: $err")
-  }
+  //  r1 match {
+  //    case Right(value) => println(s"結果: $value")
+  //    case Left(err) => println(s"錯誤: $err")
+  //  }
 
   // Try[T] 代表「嘗試運算，可能成功，也可能失敗」
   //
@@ -108,10 +103,10 @@ object A_ValuesAndTypes {
   val t1 = parseInt("123") // Success(123)
   val t2 = parseInt("abc") // Failure(NumberFormatException)
 
-  t1 match {
-    case Success(v) => println(s"成功: $v")
-    case Failure(ex) => println(s"失敗: ${ex.getMessage}")
-  }
+  //  t1 match {
+  //    case Success(v) => println(s"成功: $v")
+  //    case Failure(ex) => println(s"失敗: ${ex.getMessage}")
+  //  }
 
   // Nothing 型別說明
   //
@@ -128,29 +123,30 @@ object A_ValuesAndTypes {
   //
   // 範例：
   //
-   def fail(msg: String): Nothing =
-     throw new RuntimeException(msg)
+  def fail(msg: String): Nothing =
+    throw new RuntimeException(msg)
 
-//   val x: String = fail("error!") // OK
-//   val y: Int = fail("boom!")     // OK
+  //   val x: String = fail("error!") // OK
+  //   val y: Int = fail("boom!")     // OK
   //
   // 差異：C# 沒有對應的 Nothing
   // - 在 C# 中 throw 只能被當成「特殊語法」
   // - 在 Scala 中 throw 的型別是 Nothing
   // val nothingValue: Nothing = throw new RuntimeException("Nothing value")
+  //</editor-fold>
 
   def main(args: Array[String]): Unit = {
-    println(aFloat)
-    println(aDouble)
-    println(dSum)
-    println(aDecimal)
-    println(bSum)
+    println("Float:" + aFloat)
+    println("Double:" + aDouble)
+    println("Double Sum:" + dSum)
+    println("Decimal:" + aDecimal)
+    println("Decimal Sum: " + bSum)
+    println("Set: " + setValue)
 
-    println(setValue)
-    println(name1)
-    println(name2)
-    println(r1)
-    println(r2)
+//    println("Option1: " + name1)
+//    println("Option2: " + name2)
+//    println("Either1: " + r1)
+//    println("Either2: " + r2)
 
   }
 }

@@ -55,14 +55,14 @@ object A_ValuesAndTypes {
   val optionValue: Option[String] = Some("I am here") // c# string? optionValue = "Scala";
   val noName: Option[String] = None // string? noName = null;
   val nullValue: String = null // 這樣也是可以但不建議
-  
-  def findUserName(id: Int): Option[String] =
-    if (id == 1) Some("Alice")
+
+  def findUserName(id: Int): Option[String] = 
+    if (id == 1) return Some("Alice")
     else None
 
   val name1 = findUserName(1).getOrElse("Unknown") // 輸出 "Alice"
   val name2 = findUserName(2).getOrElse("Unknown") // 輸出 "Unknown"
-  
+
   // Either[A, B] 代表「要嘛是 A，要嘛是 B」
   //
   // 在 Scala 中：
@@ -81,10 +81,10 @@ object A_ValuesAndTypes {
   val r1 = safeDivide(10, 2) // Right(5)
   val r2 = safeDivide(10, 0) // Left("除數不能是 0")
 
-  //  r1 match {
-  //    case Right(value) => println(s"結果: $value")
-  //    case Left(err) => println(s"錯誤: $err")
-  //  }
+    r1 match {
+      case Right(value) => println(s"結果: $value")
+      case Left(err) => println(s"錯誤: $err")
+    }
 
   // Try[T] 代表「嘗試運算，可能成功，也可能失敗」
   //
@@ -103,10 +103,10 @@ object A_ValuesAndTypes {
   val t1 = parseInt("123") // Success(123)
   val t2 = parseInt("abc") // Failure(NumberFormatException)
 
-  //  t1 match {
-  //    case Success(v) => println(s"成功: $v")
-  //    case Failure(ex) => println(s"失敗: ${ex.getMessage}")
-  //  }
+    t1 match {
+      case Success(v) => println(s"成功: $v")
+      case Failure(ex) => println(s"失敗: ${ex.getMessage}")
+    }
 
   // Nothing 型別說明
   //
@@ -125,14 +125,14 @@ object A_ValuesAndTypes {
   //
   def fail(msg: String): Nothing =
     throw new RuntimeException(msg)
+    
+//    val x: String = fail("error!") // OK
+//    val y: Int = fail("boom!")     // OK
 
-  //   val x: String = fail("error!") // OK
-  //   val y: Int = fail("boom!")     // OK
-  //
-  // 差異：C# 沒有對應的 Nothing
-  // - 在 C# 中 throw 只能被當成「特殊語法」
-  // - 在 Scala 中 throw 的型別是 Nothing
-  // val nothingValue: Nothing = throw new RuntimeException("Nothing value")
+//   差異：C# 沒有對應的 Nothing
+//   - 在 C# 中 throw 只能被當成「特殊語法」
+   //- 在 Scala 中 throw 的型別是 Nothing
+   val nothingValue: Nothing = throw new RuntimeException("Nothing value")
   //</editor-fold>
 
   def main(args: Array[String]): Unit = {
@@ -143,10 +143,10 @@ object A_ValuesAndTypes {
     println("Decimal Sum: " + bSum)
     println("Set: " + setValue)
 
-//    println("Option1: " + name1)
-//    println("Option2: " + name2)
-//    println("Either1: " + r1)
-//    println("Either2: " + r2)
+    println("Option1: " + name1)
+    println("Option2: " + name2)
+    println("Either1: " + r1)
+    println("Either2: " + r2)
 
   }
 }

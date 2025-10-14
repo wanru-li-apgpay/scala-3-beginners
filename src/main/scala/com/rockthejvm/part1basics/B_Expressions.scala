@@ -63,13 +63,12 @@ object B_Expressions {
 
   // 2
   val someOtherValue = {
-    if (someValue) 239 else 986
-    42
+   if (someValue) 239 else 7
   }
 
   // 3
   val yetAnotherValue = println("Hello, Scala 我是练习3")
-  //  val yetAnotherValue2: Unit = println("Scala")
+  val yetAnotherValue2: Unit = println("Scala")
   //  val theUnit: Unit = () // Unit == 在其他语言里等同于 "void"
   //
   //  def yetAnotherValue3 = println("Scala")

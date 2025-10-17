@@ -3,7 +3,6 @@ package com.rockthejvm.part2oop  // 定义包名
 // 允许使用后缀调用（例如 person isAlive 这种写法）
 import scala.language.postfixOps
 
-// 定义一个单例对象 MethodNotations，主要用于演示“方法符号表示法”
 object B_MethodNotations {
 
   // 定义一个类 Person，包含 name、age 以及最喜欢的电影

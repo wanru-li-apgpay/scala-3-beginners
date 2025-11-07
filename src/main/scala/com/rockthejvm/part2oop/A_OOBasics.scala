@@ -11,6 +11,7 @@ object OOBasics {
 
     // 字段定义：将 name 全部转为大写并存储在 allCaps 中
     val allCaps = name.toUpperCase()
+    
 
     // 方法定义：接收一个参数 name（这里是局部变量，和字段 name 不同）
     // this.name 表示当前对象的 name 属性
@@ -36,6 +37,7 @@ object OOBasics {
   val aPerson: Person = new Person("John", 26)
   // 访问 aPerson 的 name 字段
   val john = aPerson.name
+  
   // 访问大写版本
   val johnAllCaps = aPerson.allCaps
   // 调用 greet 方法（带参数）

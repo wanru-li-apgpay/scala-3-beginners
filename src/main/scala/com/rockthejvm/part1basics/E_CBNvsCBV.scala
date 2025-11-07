@@ -43,6 +43,7 @@ object E_CBNvsCBV {
 
   def main(args: Array[String]): Unit = {
     printTwiceByValue(System.nanoTime())
+
     // 传值调用：System.nanoTime() 在函数调用之前执行 → 两次结果相同
 
     printTwiceByName(System.nanoTime())
@@ -51,7 +52,7 @@ object E_CBNvsCBV {
     printFirst(42, infinite())
     // 没有崩溃，因为 infinite() 没有被用到
 
-    // printFirst(infinite(), 42)
+     printFirst(infinite(), 42)
     // ❌ 程序崩溃：infinite() 是传值参数，在调用前就会执行，导致无限递归
   }
 }

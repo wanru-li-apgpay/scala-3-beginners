@@ -1,6 +1,8 @@
 package com.rockthejvm.part3fp
 
-object A_AnonymousFunctions {
+import java.time.InstantSource.system
+
+object A2_AnonymousFunctions {
 
   // FunctionN 实例（这里是 Function1，代表接收一个参数的函数）
   // 这是创建函数对象的传统写法
@@ -16,11 +18,12 @@ object A_AnonymousFunctions {
   // 接收两个参数的函数（Function2）
   // 这行等价于 new Function2[Int, Int, Int] { override def apply(x, y) = x + y }
   val adder: (Int, Int) => Int = (x: Int, y: Int) => x + y
-
+  def adderFunction(x:Int, Y:Int ): Int = x + Y
+   
   // 无参数函数（zero-arg function）
   // 返回一个常量值 45
   // 注意：这是函数对象本身，而不是调用结果
-  val justDoSomething: () => Int = () => 45
+  val justDoSomething = () => System.nanoTime().toInt
   // 要执行函数，必须加上括号 ()
   val anInvocation = justDoSomething()
 
@@ -77,5 +80,12 @@ object A_AnonymousFunctions {
     println(justDoSomething)
     // println(justDoSomething()) 执行函数并打印返回值（45）
     println(justDoSomething())
+    println(justDoSomething())
+    println(justDoSomething())
+    
+    println(adder(2, 3))
+    println(adder(2, 4))
+    println(adder(2, 5))
+    println(adderFunction(2, 5))
   }
 }

@@ -57,4 +57,5 @@ object E_PreventingInheritance {
     val person = new Person("Alice")
     println(person.enjoyLife()) // 输出 42
   }
+  
 }
